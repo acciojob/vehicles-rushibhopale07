@@ -20,38 +20,42 @@ public class F1 extends Car {
          */
 
         if(newSpeed == 0) {
-            changeGear(1);
             stop();
+            setCurrentGear(1);
             //Stop the car, set gear as 1
         }
         //for all other cases, change the gear accordingly
 
-        if(newSpeed > 0 && newSpeed<=50) {
-            changeGear(1);
-            changeSpeed(newSpeed, getCurrentDirection());
+        else if(newSpeed > 0 && newSpeed<=50) {
+            setCurrentSpeed(newSpeed);
+            setCurrentGear(1);
+            changeSpeed(newSpeed,getCurrentDirection());
         }
 
-        if(newSpeed > 50 && newSpeed<=100) {
+        else if(newSpeed > 50 && newSpeed<=100) {
+            setCurrentSpeed(newSpeed);
             changeGear(2);
-            changeSpeed(newSpeed, getCurrentDirection());
+            changeSpeed(newSpeed,getCurrentDirection());
         }
-
-        if(newSpeed > 100 && newSpeed<=150) {
+        else if(newSpeed > 100 && newSpeed<=150) {
+            setCurrentSpeed(newSpeed);
             changeGear(3);
-            changeSpeed(newSpeed, getCurrentDirection());
+            changeSpeed(newSpeed,getCurrentDirection());
         }
-
-        if(newSpeed > 150 && newSpeed<=200) {
+        else if(newSpeed > 150 && newSpeed<=200) {
+            setCurrentSpeed(newSpeed);
             changeGear(4);
-            changeSpeed(newSpeed, getCurrentDirection());
+            changeSpeed(newSpeed,getCurrentDirection());
         }
-        if(newSpeed > 200 && newSpeed<=250) {
+        else if(newSpeed > 200 && newSpeed<=250) {
+            setCurrentSpeed(newSpeed);
             changeGear(5);
-            changeSpeed(newSpeed, getCurrentDirection());
+            changeSpeed(newSpeed,getCurrentDirection());
         }
-        if(newSpeed>250) {
+        else {
+            setCurrentSpeed(newSpeed);
             changeGear(6);
-            changeSpeed(newSpeed, getCurrentDirection());
+            changeSpeed(newSpeed,getCurrentDirection());
         }
     }
 }
